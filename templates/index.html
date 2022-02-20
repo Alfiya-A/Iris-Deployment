@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Application</title>
+    <link href="https://fonts.googleapis.com/css?family=Pacifino" rel="stylesheet" type="text/css">
+    <style>
+    body{
+        background-color:gray;
+        height:100%;
+        text-align:center;
+        }
+    input{
+        width: 30%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 2px solid black;
+        border-radius: 4px;
+        background-color: grey;
+        color: white;
+    }
+    .btn {
+        background-color: black; 
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+    }
+</style>
+</head>
+<body>
+    <h1>Iris Classification</h1>
+    <div class="login">
+        <form action="{{url_for('predict')}}" method="post">
+            <label for="SepalLengthCm">Sepal Length:</label><br>
+            <input type="text" id='SepalLengthCm'name="SepalLengthCm"><br>
+            <br>
+            <label for="SepalWidthCm">Sepal Width:</label><br>
+            <input type="text" id='SepalWidthCm' name="SepalWidthCm"><br>
+            <br>
+            <label for="PetalLengthCm"> Petal Length:</label><br>
+            <input type="text" id='PetalLengthCmd' name="PetalLengthCm"><br>
+            <br>
+            <label for="PetalWidthCm">Petal Width:</label><br>
+            <input type="text" id='PetalWidthCm' name="PetalWidthCm"><br>
+            <br>
+            <button type="submit" class="btn">Predict</button>
+        </form>
+    <br>
+    {{ prediction_text}}
+</div>
+
+</body>
+</html>
